@@ -23,7 +23,7 @@ public class UsuarioController {
 		@RequestParam(required = true, defaultValue = "Camargo") String sobrenome,
 		@RequestParam(required = true, defaultValue = "+5571991801813") String whatsapp,
 		@RequestParam(required = true, defaultValue = "duan1505@gmail.com") String email,
-		@RequestParam(required = true, defaultValue = "12345") String senha)
+		@RequestParam(required = true, defaultValue = "123") String senha)
 		{
 
 		usuarioService.save(nome, sobrenome, whatsapp, email, senha);

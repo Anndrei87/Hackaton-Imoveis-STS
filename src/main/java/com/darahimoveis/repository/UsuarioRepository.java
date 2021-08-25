@@ -1,10 +1,10 @@
 package com.darahimoveis.repository;
 
-import java.util.Optional;
-import com.darahimoveis.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.darahimoveis.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-    public Optional<Usuario> findByEmailAndSenha(String email, String senha);
+	
 }

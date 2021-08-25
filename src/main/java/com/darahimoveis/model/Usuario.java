@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name="usuario")
+//@Entity(name="usuario")
 public class Usuario {
 
 	@Id
@@ -26,7 +26,7 @@ public class Usuario {
 	@Column
 	private String sobrenome;
 	@Column
-	private Integer whatsapp;
+	private String whatsapp;
 	@Column
 	private String email;
 	@Column

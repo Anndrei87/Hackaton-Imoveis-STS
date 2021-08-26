@@ -11,4 +11,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public void Oi();
 }

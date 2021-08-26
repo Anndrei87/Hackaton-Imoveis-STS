@@ -32,6 +32,6 @@ public class Usuario {
 	@Column
 	private String senha;
 	
-	private String test;
+	private String teste;
 	
 }

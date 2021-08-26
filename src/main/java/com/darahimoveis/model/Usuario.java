@@ -31,7 +31,4 @@ public class Usuario {
 	private String email;
 	@Column
 	private String senha;
-	
-	private String teste;
-	
 }

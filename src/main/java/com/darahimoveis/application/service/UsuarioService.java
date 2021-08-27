@@ -1,10 +1,10 @@
-package com.darahimoveis.service;
+package com.darahimoveis.application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.darahimoveis.model.Usuario;
-import com.darahimoveis.repository.UsuarioRepository;
+import com.darahimoveis.application.model.Usuario;
+import com.darahimoveis.application.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
@@ -23,9 +23,5 @@ public class UsuarioService {
 			usuario.setSenha(senha);
 			usuarioRepository.save(usuario);
 		}
-	}
-	
-	public void Oi() {
-		usuarioRepository.Oi();
 	}
 }

@@ -1,4 +1,4 @@
-package com.darahimoveis.controller;
+package com.darahimoveis.application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.darahimoveis.service.UsuarioService;
+import com.darahimoveis.application.service.UsuarioService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
 	@Autowired
@@ -20,7 +20,7 @@ public class UsuarioController {
 	
 	
 	
-	@GetMapping
+	@GetMapping("/oi")
 	public String oi() {
 		return "OI";
 	}

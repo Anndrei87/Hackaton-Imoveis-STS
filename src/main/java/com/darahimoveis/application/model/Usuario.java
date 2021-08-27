@@ -1,4 +1,4 @@
-package com.darahimoveis.model;
+package com.darahimoveis.application.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,29 +15,20 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "imovel")
-public class Imovel {
-    
-    @Id
+@Entity(name="usuario")
+public class Usuario {
+
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-    @Column
-    private Integer id_usuario;
 	@Column
-	private String tituloImovel;
+	private String nome;
 	@Column
-	private Integer cep;
+	private String sobrenome;
 	@Column
-	private String logradouro;
+	private String whatsapp;
 	@Column
-	private String numeor;
+	private String email;
 	@Column
-	private String complemento;
-    @Column
-	private String bairro;
-	@Column
-	private String cidade;
-	@Column
-	private String estado;
-    
+	private String senha;
 }

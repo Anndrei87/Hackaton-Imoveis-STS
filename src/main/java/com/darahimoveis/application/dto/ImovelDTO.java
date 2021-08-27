@@ -1,4 +1,4 @@
-package com.darahimoveis.dto;
+package com.darahimoveis.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

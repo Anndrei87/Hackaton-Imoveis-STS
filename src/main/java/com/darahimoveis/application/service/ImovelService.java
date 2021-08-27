@@ -1,8 +1,9 @@
-package com.darahimoveis.service;
+package com.darahimoveis.application.service;
 
-import com.darahimoveis.repository.ImovelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.darahimoveis.application.repository.ImovelRepository;
 
 @Service
 public class ImovelService {

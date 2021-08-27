@@ -1,4 +1,4 @@
-package com.darahimoveis.specification;
+package com.darahimoveis.application.specification;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import com.darahimoveis.model.Usuario;
+import com.darahimoveis.application.model.Usuario;
 
 public class UsuarioSpecification implements Specification<Usuario>{
 

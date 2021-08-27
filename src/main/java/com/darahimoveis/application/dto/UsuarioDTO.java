@@ -1,6 +1,6 @@
-package com.darahimoveis.dto;
+package com.darahimoveis.application.dto;
 
-import com.darahimoveis.model.Usuario;
+import com.darahimoveis.application.model.Usuario;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

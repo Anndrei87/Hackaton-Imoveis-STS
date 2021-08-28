@@ -58,11 +58,11 @@
 <!-- 			<version>2.9.2</version> -->
 <!-- 		</dependency> -->
 		
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.hibernate</groupId> -->
-<!-- 			<artifactId>hibernate-jpamodelgen</artifactId> -->
-<!-- 			<scope>provided</scope> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		
 <!-- 		<dependency> -->
 <!-- 			<groupId>org.modelmapper</groupId> -->

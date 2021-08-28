@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.darahimoveis.application.service.ImovelService;
 
 @RestController
-@RequestMapping("v1/imovel")
+@RequestMapping("/imovel")
 public class ImovelController {
 
     @Autowired

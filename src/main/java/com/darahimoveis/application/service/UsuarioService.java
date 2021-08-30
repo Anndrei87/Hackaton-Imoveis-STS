@@ -1,10 +1,8 @@
 package com.darahimoveis.application.service;
 
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.darahimoveis.application.model.Usuario;
 import com.darahimoveis.application.repository.UsuarioRepository;
 
@@ -28,9 +26,7 @@ public class UsuarioService {
 	}
 	
 	public Optional<Usuario> findById(Integer id) {
-		
 		Optional<Usuario> usuario = usuarioRepository.findById(id);
-		
 		return usuario;
 	}
 }

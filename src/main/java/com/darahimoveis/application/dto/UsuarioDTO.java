@@ -21,6 +21,7 @@ public class UsuarioDTO {
 	private String senha;
 
 	public UsuarioDTO createUsuarioDto(Usuario usuario) {
+		
 		UsuarioDTO usuarioDTO = new UsuarioDTO();
 		
 		usuarioDTO.setNome(usuario.getNome());

@@ -2,7 +2,6 @@ package com.darahimoveis.application.specification;
 
 import java.util.ArrayList;
 
-import javax.persistence.Column;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;

@@ -15,22 +15,20 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "usuario")
-public class Usuario {
+@Entity(name = "quarto")
+public class Quarto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_usuario;
+	private Integer id_quarto;
 	@Column
-	private String nome;
+	private Integer id_imovel;
 	@Column
-	private String sobrenome;
+	private String tipo_quarto;
 	@Column
-	private String whatsapp;
+	private Double metragem_quarto;
 	@Column
-	private String email;
+	private Integer qtd_cama;
 	@Column
-	private String senha;
-	@Column
-	private String validacao;
+	private String descricao_quarto;
 }

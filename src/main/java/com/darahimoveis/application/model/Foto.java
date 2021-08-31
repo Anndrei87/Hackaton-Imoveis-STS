@@ -1,7 +1,6 @@
 package com.darahimoveis.application.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,22 +14,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "usuario")
-public class Usuario {
+public class Foto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_usuario;
+	private Integer id_foto;
 	@Column
-	private String nome;
+	private String id_imovel;
 	@Column
-	private String sobrenome;
+	private Byte[] foto;
 	@Column
-	private String whatsapp;
-	@Column
-	private String email;
-	@Column
-	private String senha;
-	@Column
-	private String validacao;
+	private String descricao_foto;
+	
+	
 }

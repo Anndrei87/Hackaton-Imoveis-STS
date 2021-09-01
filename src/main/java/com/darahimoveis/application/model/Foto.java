@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,9 +23,9 @@ public class Foto {
 	@Column
 	private String id_imovel;
 	@Column
+	@Lob
 	private Byte[] foto;
 	@Column
 	private String descricao_foto;
-	
-	
+
 }

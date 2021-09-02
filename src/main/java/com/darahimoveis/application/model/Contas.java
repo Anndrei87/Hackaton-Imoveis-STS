@@ -38,5 +38,4 @@ public class Contas {
     private Double energia;
 	@Column
 	private Double gas;
-	
 }

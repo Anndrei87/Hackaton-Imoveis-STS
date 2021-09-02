@@ -23,7 +23,7 @@ public class Foto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_foto;
 	@Column
-	private String id_imovel;
+	private Integer id_imovel;
 	@Column
 	@Lob
 	private Byte[] foto;

@@ -18,6 +18,7 @@ public class UsuarioSpecification implements Specification<Usuario>{
 	 */
 	private static final long serialVersionUID = 6127956662890283800L;
 	
+	private Integer id;
 	private String nome;
 	private String sobrenome;
 	private String whatsapp;
@@ -29,6 +30,10 @@ public class UsuarioSpecification implements Specification<Usuario>{
 
 		ArrayList<Predicate> predicates = new ArrayList<Predicate>();
 		
+		if(this.id != null) {			
+			Predicate predicate = criteriaBuilder.equal(root.get("id_usuario"), id);
+			predicates.add(predicate);
+		}
 		if(this.nome != null) {			
 			Predicate predicate = criteriaBuilder.equal(root.get("nome"), nome);
 			predicates.add(predicate);

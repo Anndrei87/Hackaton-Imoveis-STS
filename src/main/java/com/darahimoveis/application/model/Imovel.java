@@ -4,12 +4,18 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,13 +30,20 @@ public class Imovel {
     
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_imovel")
 	private Integer id_imovel;
-    @Column
-    private Integer id_usuario;
-    @Column
-    private Integer id_quarto;
-	@Column
-	private Integer id_foto;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+    @OneToOne
+    @JoinColumn(name = "id_quarto")
+    private Quarto quarto;
+	@OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_foto")
+	private List<Foto> fotos;
+	@OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_contas")
+	private List<Contas> contas;
 	@Column
 	private Integer cep;
 	@Column
@@ -49,20 +62,6 @@ public class Imovel {
 	private String tipo_imovel;
 	@Column
 	private String tipo_compartilhamento;
-	@Column
-	private Double aluguel;
-    @Column
-	private Double condominio;
-	@Column
-	private Double internet;
-	@Column
-	private Double tv_cabo;
-	@Column
-    private Double agua;
-    @Column
-    private Double energia;
-	@Column
-	private Double gas;
 	@Column
 	private String facilidades_imovel;
 	@Column

@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,17 +15,28 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "foto")
-public class Foto {
+@Entity(name = "contas")
+public class Contas {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id_foto;
+	@Column(name = "id_contas")
+    private Integer id_contas;
 	@Column
-	private String id_imovel;
+	private Integer id_imovel;
 	@Column
-	@Lob
-	private Byte[] foto;
+	private Double aluguel;
+    @Column
+	private Double condominio;
 	@Column
-	private String descricao_foto;
+	private Double internet;
+	@Column
+	private Double tv_cabo;
+	@Column
+    private Double agua;
+    @Column
+    private Double energia;
+	@Column
+	private Double gas;
+	
 }

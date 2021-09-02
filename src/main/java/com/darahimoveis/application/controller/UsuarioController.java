@@ -28,9 +28,9 @@ public class UsuarioController {
 
 	/*GetMappings*/
 	@GetMapping("/findById")
-	public Optional<Usuario> findByID(@RequestParam Integer id) {
+	public Usuario findByID(@RequestParam Integer id) {
 		Optional<Usuario> usuario =  usuarioService.findById(id);
-		return usuario;
+		return usuario.get();
 	}
 	
 	@GetMapping("/loginSenha")

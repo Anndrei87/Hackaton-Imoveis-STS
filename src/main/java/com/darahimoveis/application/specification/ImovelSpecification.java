@@ -64,24 +64,12 @@ public class ImovelSpecification implements Specification<Imovel>{
 			Predicate predicate = criteriaBuilder.equal(root.get("id_quarto"), id_quarto);
 			predicates.add(predicate);
 		}
-		if(this.id_foto != null) {			
-			Predicate predicate = criteriaBuilder.equal(root.get("id_foto"), id_foto);
-			predicates.add(predicate);
-		}
 		if(this.cep != null) {			
 			Predicate predicate = criteriaBuilder.equal(root.get("cep"), cep);
 			predicates.add(predicate);
 		}
 		if(this.logradouro != null) {			
 			Predicate predicate = criteriaBuilder.equal(root.get("logradouro"), logradouro);
-			predicates.add(predicate);
-		}
-		if(this.numero != null) {			
-			Predicate predicate = criteriaBuilder.equal(root.get("numero"), numero);
-			predicates.add(predicate);
-		}
-		if(this.complemento != null) {			
-			Predicate predicate = criteriaBuilder.equal(root.get("complemento"), complemento);
 			predicates.add(predicate);
 		}
 		if(this.bairro != null) {			

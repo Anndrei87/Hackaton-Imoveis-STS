@@ -19,6 +19,8 @@ class DarahimoveisApplicationTests {
 	@MockBean
 	UsuarioService usuarioService;
 	
+	//H2
+	
 	@BeforeEach
 	void setup() {
 		Optional<Usuario> usuario = Optional.of(new Usuario(2,"Duan","Camargo","71999996666","duan@duan.com", "12345", "2021-08-01 12:00:00"));

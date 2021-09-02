@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,18 +32,18 @@ public class Imovel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_imovel")
 	private Integer id_imovel;
-    @Column
-//    @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "id_usuario")
-    private Integer id_usuario;
-    @Column
-//    @OneToOne
+    private Usuario usuario;
+    @OneToOne
     @JoinColumn(name = "id_quarto")
-    private Integer id_quarto;
-	@Column
-//	@OneToMany(fetch = FetchType.EAGER, mappedBy="imovel")
+    private Quarto quarto;
+	@OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_foto")
-	private Integer id_foto;
+	private List<Foto> fotos;
+	@OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_contas")
+	private List<Contas> contas;
 	@Column
 	private Integer cep;
 	@Column
@@ -61,20 +62,6 @@ public class Imovel {
 	private String tipo_imovel;
 	@Column
 	private String tipo_compartilhamento;
-	@Column
-	private Double aluguel;
-    @Column
-	private Double condominio;
-	@Column
-	private Double internet;
-	@Column
-	private Double tv_cabo;
-	@Column
-    private Double agua;
-    @Column
-    private Double energia;
-	@Column
-	private Double gas;
 	@Column
 	private String facilidades_imovel;
 	@Column

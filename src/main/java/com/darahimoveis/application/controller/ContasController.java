@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.darahimoveis.application.model.Contas;
-import com.darahimoveis.application.model.Usuario;
 import com.darahimoveis.application.service.ContasService;
 
 @RestController

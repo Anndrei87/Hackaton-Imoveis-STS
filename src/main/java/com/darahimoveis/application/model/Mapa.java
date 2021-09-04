@@ -15,14 +15,20 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "contas")
-public class Contas {
-
+@Entity(name = "mapa")
+public class Mapa {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_contas")
-    private Integer id_contas;
+	@Column(name = "id_mapa")
+    private Integer id_mapa;
+	
 	@Column
-	private String descricao;
-
+	private String mapa; 
+	
+	@Column
+	private Double latitude;
+	
+	@Column
+	private Double longetude;
 }

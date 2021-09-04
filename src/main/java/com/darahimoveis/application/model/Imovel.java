@@ -1,25 +1,15 @@
-package com.darahimoveis.application.model;
-
-import java.util.Date;
+	package com.darahimoveis.application.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Setter; // Import the DateTimeFormatter class
 
 @Getter
 @Setter
@@ -32,18 +22,6 @@ public class Imovel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_imovel")
 	private Integer id_imovel;
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
-    @OneToOne
-    @JoinColumn(name = "id_quarto")
-    private Quarto quarto;
-	@OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_foto")
-	private List<Foto> fotos;
-	@OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_contas")
-	private List<Contas> contas;
 	@Column
 	private Integer cep;
 	@Column
@@ -61,21 +39,8 @@ public class Imovel {
 	@Column
 	private String tipo_imovel;
 	@Column
-	private String tipo_compartilhamento;
-	@Column
-	private String facilidades_imovel;
-	@Column
 	private Integer qtd_banheiro;
 	@Column
 	private Double metragem_imovel;
-	@Column
-	private String regras;
-    @Column
-	private Long mapa;
-	@Column
-	private String facilidades_regiao;
-	@Column
-	@DateTimeFormat
-	private Date data_publicacao;
     
 }

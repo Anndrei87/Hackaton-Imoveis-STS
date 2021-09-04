@@ -28,7 +28,6 @@ public class ImovelSpecification implements Specification<Imovel>{
 	private String tipo_compartilhamento;
 	private Integer qtd_banheiro;
 	private Double metragem_imovel;
-	private Date data_publicacao;
 	
 	@Override
 	public Predicate toPredicate(Root<Imovel> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
@@ -69,10 +68,6 @@ public class ImovelSpecification implements Specification<Imovel>{
 		}
 		if(this.metragem_imovel != null) {			
 			Predicate predicate = criteriaBuilder.equal(root.get("metragem_imovel"), metragem_imovel);
-			predicates.add(predicate);
-		}
-		if(this.data_publicacao != null) {			
-			Predicate predicate = criteriaBuilder.equal(root.get("data_publicacao"), data_publicacao);
 			predicates.add(predicate);
 		}
 		

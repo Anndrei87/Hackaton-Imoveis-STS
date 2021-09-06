@@ -3,12 +3,17 @@ package com.darahimoveis.application.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.darahimoveis.application.dto.ImovelDTO;
 import com.darahimoveis.application.model.Imovel;
 import com.darahimoveis.application.service.ImovelService;
 
@@ -20,6 +25,7 @@ public class ImovelController {
     @Autowired
 	ImovelService imovelService;
     
+    /*GetMappings*/
     @GetMapping("/findAll")
 	public Optional<Imovel> findByID() {
 		Optional<Imovel> imovel = Optional.of(new Imovel());
@@ -30,5 +36,15 @@ public class ImovelController {
 	public Imovel findByID(@RequestParam Integer id) {
 		Optional<Imovel> imovel =  imovelService.findById(id);
 		return imovel.get();
+	}
+    
+    /*PostMappings*/
+    @PostMapping
+	public ResponseEntity<String> salvar(@RequestBody ImovelDTO imovelDTO)
+	{
+    	imovelService.save(
+    			imovelDTO.getCep(), imovelDTO.getLogradouro(), imovelDTO.getNumero(), imovelDTO.getComplemento(), imovelDTO.getBairro(), 
+    			imovelDTO.getCidade(), imovelDTO.getEstado(), imovelDTO.getTipo_imovel(), imovelDTO.getQtd_banheiro(), imovelDTO.getMetragem_imovel());
+		return new ResponseEntity<String>("Imóvel Cadastrado!",HttpStatus.CREATED);
 	}
 }

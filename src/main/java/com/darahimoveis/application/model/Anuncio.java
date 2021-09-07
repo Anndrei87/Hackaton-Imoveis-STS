@@ -41,8 +41,8 @@ public class Anuncio {
 	@OneToOne
 	private Usuario usuario;
 	
-	@OneToOne
-	private Mapa mapa;
+	@Column
+	private String mapa_embed;
 	
 	@Column
 	@DateTimeFormat

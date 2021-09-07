@@ -41,6 +41,8 @@ public class Imovel {
 	@Column
 	private Integer qtd_banheiro;
 	@Column
+	private Integer qtd_num_pessoas;
+	@Column
 	private Double metragem_imovel;
     
 }

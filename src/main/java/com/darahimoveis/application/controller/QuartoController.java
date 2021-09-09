@@ -34,10 +34,8 @@ public class QuartoController {
 	
 
 	@PostMapping
-	public ResponseEntity<String> salvar(
-		@RequestBody QuartoDTO quartoDTO)
-	{
-		quartoService.save(quartoDTO.getDescricao_quarto(), quartoDTO.getTipo_quarto(), quartoDTO.getQtd_cama(), quartoDTO.getMetragem_quarto());
+	public ResponseEntity<String> salvar(@RequestBody QuartoDTO quartoDTO){
+		quartoService.save(quartoDTO);
 		return new ResponseEntity<String>("Quarto Cadastrado!",HttpStatus.CREATED);
 	}
 }

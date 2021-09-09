@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +24,39 @@ public class Contas {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_contas")
     private Integer id_contas;
+	
+	@OneToOne
+	@JoinColumn(name="id_imovel")
+	private Imovel imovel;
+	
 	@Column
-	private String descricao;
+	private Double aluguel;
+	
+	@Column
+	private Double iptu;
+	
+	@Column
+	private Double condominio;
+	
+	@Column
+	private Double internet;
 
+	@Column
+	private Double tv_cabo;
+	
+	@Column
+	private Double agua;
+	
+	@Column
+	private Double energia;
+	
+	@Column
+	private Double gas;
+	
+//	@ManyToMany(mappedBy = "contas")
+//	@JsonIgnore
+//	private List<Imovel> imovels;
+//	
+//	@Column
+//	private String descricao;
 }

@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.darahimoveis.application.dto.ImovelDTO;
 import com.darahimoveis.application.model.Imovel;
 import com.darahimoveis.application.repository.ImovelRepository;
 
@@ -19,24 +20,27 @@ public class ImovelService {
 		return imovel;
 	}
     
-    public void save(Integer cep, String logradouro, String numero, String complemento, String bairro, String cidade, String estado,
-    				 String tipo_imovel, Integer qtd_banheiro, Double metragem_imovel){
+    public Integer save(ImovelDTO imovelDTO){
 		
     	Imovel imovel = new Imovel();
+    	Imovel imovelRetorno = new Imovel();
 
-		if(cep != null){	
-			imovel.setCep(cep);
-			imovel.setLogradouro(logradouro);
-			imovel.setNumero(numero);
-			imovel.setComplemento(complemento);
-			imovel.setBairro(bairro);
-			imovel.setCidade(cidade);
-			imovel.setEstado(estado);
-			imovel.setTipo_imovel(tipo_imovel);
-			imovel.setQtd_banheiro(qtd_banheiro);
-			imovel.setMetragem_imovel(metragem_imovel);
-			
-			imovelRepository.save(imovel);
+		if(imovelDTO.getCep() != null){	
+			imovel.setCep(imovelDTO.getCep());
+			imovel.setLogradouro(imovelDTO.getLogradouro());
+			imovel.setNumero(imovelDTO.getNumero());
+			imovel.setComplemento(imovelDTO.getComplemento());
+			imovel.setBairro(imovelDTO.getBairro());
+			imovel.setCidade(imovelDTO.getCidade());
+			imovel.setEstado(imovelDTO.getEstado());
+			imovel.setTipo_imovel(imovelDTO.getTipo_imovel());
+			imovel.setQtd_banheiro(imovelDTO.getQtd_banheiro());
+			imovel.setMetragem_imovel(imovelDTO.getMetragem_imovel());
+			imovel.setQtd_num_pessoas(imovelDTO.getQtd_num_pessoas());
+			imovelRetorno = imovelRepository.save(imovel);
 		}
+		
+		
+		return imovelRetorno.getId_imovel();
 	}
 }

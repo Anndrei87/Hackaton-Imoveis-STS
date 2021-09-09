@@ -27,8 +27,4 @@ public class Quarto {
 	private String tipo_quarto;
 	@Column
 	private Double metragem_quarto;
-	@Column
-	private Integer qtd_cama;
-	@Column
-	private String descricao_quarto;
 }

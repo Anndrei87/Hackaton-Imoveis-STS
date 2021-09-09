@@ -48,10 +48,8 @@ public class UsuarioController {
 
 	/*PostMappings*/
 	@PostMapping
-	public ResponseEntity<String> salvar(
-		@RequestBody UsuarioDTO usuarioDTO)
-	{
-		usuarioService.save(usuarioDTO.getNome(), usuarioDTO.getSobrenome(), usuarioDTO.getWhatsapp(), usuarioDTO.getEmail(), usuarioDTO.getSenha());
+	public ResponseEntity<String> salvar(@RequestBody UsuarioDTO usuarioDTO){
+		usuarioService.save(usuarioDTO);
 		return new ResponseEntity<String>("Usuário Cadastrado!",HttpStatus.CREATED);
 	}
 	

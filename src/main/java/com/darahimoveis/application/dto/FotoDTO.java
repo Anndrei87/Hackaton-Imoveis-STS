@@ -18,7 +18,7 @@ public class FotoDTO {
 	private Byte[] foto;
 	
 	
-	public FotoDTO createQuartoDto(Foto foto) {
+	public FotoDTO createFotoDto(Foto foto) {
 		
 		FotoDTO fotoDTO = new FotoDTO();
 		

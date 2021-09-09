@@ -13,23 +13,19 @@ import lombok.Setter;
 @Setter
 public class QuartoDTO {
 	
-	
+	private Integer id_quarto;
 	private Integer id_imovel;
 	private String tipo_quarto;
 	private Double metragem_quarto;
-	private Integer qtd_cama;
-	private String descricao_quarto;
-	
 	
 	public QuartoDTO createQuartoDto(Quarto quarto) {
 			
 			QuartoDTO quartoDTO = new QuartoDTO();
 			
-			
-			quartoDTO.setTipo_quarto(tipo_quarto);
-			quartoDTO.setQtd_cama(qtd_cama);
-			quartoDTO.setDescricao_quarto(descricao_quarto);
-			quartoDTO.setMetragem_quarto(metragem_quarto);
+			quartoDTO.setId_quarto(quarto.getId_quarto());
+			quartoDTO.setId_imovel(quarto.getId_imovel());
+			quartoDTO.setTipo_quarto(quarto.getTipo_quarto());
+			quartoDTO.setMetragem_quarto(quarto.getMetragem_quarto());
 			
 			return quartoDTO;
 		}

@@ -40,11 +40,8 @@ public class ImovelController {
     
     /*PostMappings*/
     @PostMapping
-	public ResponseEntity<String> salvar(@RequestBody ImovelDTO imovelDTO)
-	{
-    	imovelService.save(
-    			imovelDTO.getCep(), imovelDTO.getLogradouro(), imovelDTO.getNumero(), imovelDTO.getComplemento(), imovelDTO.getBairro(), 
-    			imovelDTO.getCidade(), imovelDTO.getEstado(), imovelDTO.getTipo_imovel(), imovelDTO.getQtd_banheiro(), imovelDTO.getMetragem_imovel());
-		return new ResponseEntity<String>("Imóvel Cadastrado!",HttpStatus.CREATED);
+	public ResponseEntity<Integer> salvar(@RequestBody ImovelDTO imovelDTO){
+    	Integer id_imovel = imovelService.save(imovelDTO);
+		return new ResponseEntity<Integer>(id_imovel,HttpStatus.CREATED);
 	}
 }

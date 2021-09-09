@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.darahimoveis.application.dto.UsuarioDTO;
 import com.darahimoveis.application.model.Usuario;
 import com.darahimoveis.application.repository.UsuarioRepository;
 
@@ -14,17 +15,20 @@ public class UsuarioService {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	
-	public void save(String nome, String sobrenome, String whatsapp, String email, String senha){
+	public Integer save(UsuarioDTO usuarioDTO){
 		Usuario usuario = new Usuario();
-
-		if(nome != null && sobrenome != null && email != null && senha != null){	
-			usuario.setNome(nome);
-			usuario.setSobrenome(sobrenome);
-			usuario.setWhatsapp(whatsapp);
-			usuario.setEmail(email);
-			usuario.setSenha(senha);
-			usuarioRepository.save(usuario);
+		Usuario usuarioRetorno = new Usuario();
+		
+		if(usuarioDTO.getNome() != null && usuarioDTO.getSobrenome() != null && usuarioDTO.getEmail() != null && usuarioDTO.getSenha() != null){	
+			usuario.setNome(usuarioDTO.getNome());
+			usuario.setSobrenome(usuarioDTO.getSobrenome());
+			usuario.setWhatsapp(usuarioDTO.getWhatsapp());
+			usuario.setEmail(usuarioDTO.getEmail());
+			usuario.setSenha(usuarioDTO.getSenha());
+			usuarioRetorno = usuarioRepository.save(usuario);
 		}
+		
+		return usuarioRetorno.getId_usuario();
 	}
 	
 	public Optional<Usuario> findById(Integer id) {
@@ -34,5 +38,5 @@ public class UsuarioService {
 
 	public Usuario findByEmailAndSenha(Usuario usuario) {
 		return usuarioRepository.findByEmailAndSenha(usuario.getEmail(), usuario.getSenha()).get();
-	}	
+	}
 }

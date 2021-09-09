@@ -13,6 +13,7 @@ import lombok.Setter;
 @Setter
 public class ImovelDTO {
     
+	private Integer id_imovel;
 	private Integer cep;
 	private String logradouro;
 	private String numero;
@@ -23,11 +24,13 @@ public class ImovelDTO {
 	private String tipo_imovel;
 	private Integer qtd_banheiro;
 	private Double metragem_imovel;
+	private Integer qtd_num_pessoas;
 	
 public ImovelDTO createImovelDto(Imovel imovel) {
 		
 	ImovelDTO imovelDTO = new ImovelDTO();
 		
+	imovelDTO.setId_imovel(imovel.getId_imovel());
 	imovelDTO.setCep(imovel.getCep());
 	imovelDTO.setLogradouro(imovel.getLogradouro());
 	imovelDTO.setNumero(imovel.getNumero());
@@ -38,6 +41,7 @@ public ImovelDTO createImovelDto(Imovel imovel) {
 	imovelDTO.setTipo_imovel(imovel.getTipo_imovel());
 	imovelDTO.setQtd_banheiro(imovel.getQtd_banheiro());
 	imovelDTO.setMetragem_imovel(imovel.getMetragem_imovel());
+	imovelDTO.setQtd_num_pessoas(imovel.getQtd_num_pessoas());
 	
 	return imovelDTO;
 	}

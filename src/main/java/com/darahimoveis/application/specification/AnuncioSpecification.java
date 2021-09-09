@@ -28,7 +28,7 @@ public class AnuncioSpecification implements Specification<Anuncio>{
 	private Imovel imovel;
 	private List<Foto> fotos;
 	private Usuario usuario;
-	private Mapa mapa;
+	private Mapa mapa_embed;
 	private LocalDateTime data_publicacao;
 
 	@Override
@@ -50,8 +50,8 @@ ArrayList<Predicate> predicates = new ArrayList<Predicate>();
 			predicates.add(predicate);
 		}
 		
-		if(this.mapa != null) {			
-			Predicate predicate = criteriaBuilder.equal(root.get("mapa"), mapa);
+		if(this.mapa_embed != null) {			
+			Predicate predicate = criteriaBuilder.equal(root.get("mapa_embed"), mapa_embed);
 			predicates.add(predicate);
 		}
 		if(this.usuario != null) {			

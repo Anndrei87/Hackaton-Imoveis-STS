@@ -46,11 +46,12 @@ public class AnuncioService {
 			anuncio.setDetalhes_regiao(anuncioDTO.getDetalhes_regiao());
 			anuncio.setMapa_embed(anuncioDTO.getMapa_embed());
 			anuncio.setData_publicacao(anuncioDTO.getData_publicacao());
+			anuncio.setDetalhes_quarto(anuncioDTO.getDetalhes_quarto());
 			
 			anuncioRepository.save(anuncio);
 			
 		}else {
-			System.out.println("A data da publicação estava vazia");
+			System.out.println("Data vazia");
 		}
 	}
 }

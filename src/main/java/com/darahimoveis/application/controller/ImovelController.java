@@ -42,6 +42,7 @@ public class ImovelController {
     @PostMapping
 	public ResponseEntity<Integer> salvar(@RequestBody ImovelDTO imovelDTO){
     	Integer id_imovel = imovelService.save(imovelDTO);
+    	System.out.println(id_imovel);
 		return new ResponseEntity<Integer>(id_imovel,HttpStatus.CREATED);
 	}
 }

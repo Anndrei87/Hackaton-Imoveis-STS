@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 public class UsuarioDTO {
     
-	private Integer id;
+	private Integer id_usuario;
 	private String nome;
 	private String sobrenome;
 	private String whatsapp;

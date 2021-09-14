@@ -8,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,9 +28,17 @@ public class Imovel {
     @Column(name = "id_imovel")
 	private Integer id_imovel;
     
-    @ManyToMany
-    @JoinTable(name="contas_imovel", joinColumns=@JoinColumn(name = "id_imovel"),inverseJoinColumns = @JoinColumn(name = "id_contas"))
-    private List<Contas> contas;
+    @OneToOne
+    @JoinColumn(name = "id_quarto")
+    private Quarto quarto;
+    
+    @OneToOne
+    @JoinColumn(name = "id_conta")
+    private Contas conta;
+    
+    @OneToMany
+    @JoinColumn(name = "id_foto")
+    private List<Foto> fotos;
     
 	@Column
 	private Integer cep;
@@ -64,5 +72,4 @@ public class Imovel {
 	
 	@Column
 	private Double metragem_imovel;
-    
 }

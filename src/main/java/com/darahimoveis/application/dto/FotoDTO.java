@@ -12,18 +12,20 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FotoDTO {
-
 	
+	private Integer id_foto;
 	private String descricao_foto;
-	private Byte[] foto;
+	private Byte[] fotoByte;
+	private ImovelDTO imovelDTO;
 	
 	
-	public FotoDTO createFotoDto(Foto foto) {
-		
+	public FotoDTO createFotoDto(Foto foto) {	
 		FotoDTO fotoDTO = new FotoDTO();
 		
-		fotoDTO.setDescricao_foto(descricao_foto);
-		fotoDTO.setFoto(getFoto());
+		fotoDTO.setId_foto(foto.getId_foto());
+		fotoDTO.setDescricao_foto(foto.getDescricao_foto());
+		fotoDTO.setFotoByte(foto.getFoto());
+		fotoDTO.setImovelDTO(new ImovelDTO().createImovelDto(foto.getImovel()));
 		
 		return fotoDTO;
 	}

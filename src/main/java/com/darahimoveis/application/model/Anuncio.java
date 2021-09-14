@@ -1,15 +1,11 @@
 package com.darahimoveis.application.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
@@ -32,9 +28,6 @@ public class Anuncio {
 	@OneToOne
 	@JoinColumn(name="id_imovel")
 	private Imovel imovel;
-	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "foto")
-	private List<Foto> fotos;
 	
 	@OneToOne
 	@JoinColumn(name="id_usuario")

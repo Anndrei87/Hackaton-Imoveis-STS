@@ -17,17 +17,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "contas")
+@Entity(name = "conta")
 public class Contas {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_contas")
-    private Integer id_contas;
+	@Column(name = "id_conta")
+    private Integer id_conta;
 	
-	@OneToOne
-	@JoinColumn(name="id_imovel")
-	private Imovel imovel;
+//	@OneToOne
+//	@JoinColumn(name="id_imovel")
+//	private Imovel imovel;
 	
 	@Column
 	private Double aluguel;
@@ -52,11 +52,4 @@ public class Contas {
 	
 	@Column
 	private Double gas;
-	
-//	@ManyToMany(mappedBy = "contas")
-//	@JsonIgnore
-//	private List<Imovel> imovels;
-//	
-//	@Column
-//	private String descricao;
 }

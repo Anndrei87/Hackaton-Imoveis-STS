@@ -1,5 +1,6 @@
 package com.darahimoveis.application.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,19 @@ public class QuartoController {
 	@Autowired
 	QuartoService quartoService;
 	
+	
 	@GetMapping("/findById")
 	public Optional<Quarto> findByID(@RequestParam Integer id_quarto) {
 		Optional<Quarto> quarto =  quartoService.findById(id_quarto);
 		return quarto;
 	}
 	
+	@GetMapping("/findAll")
+	public List<Quarto> findAll() {
+		List<Quarto> quarto = quartoService.findAll();
+		return quarto;
+	}
 	
-
 	@PostMapping
 	public ResponseEntity<String> salvar(@RequestBody QuartoDTO quartoDTO){
 		quartoService.save(quartoDTO);

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.darahimoveis.application.dto.AnuncioDTO;
 import com.darahimoveis.application.model.Anuncio;
 import com.darahimoveis.application.model.Imovel;
+import com.darahimoveis.application.model.Usuario;
 import com.darahimoveis.application.repository.AnuncioRepository;
 
 @Service
@@ -31,15 +32,22 @@ public class AnuncioService {
 		return anuncioRepository.findAll(pageRequest);
 	}
 	
-	public void save(AnuncioDTO anuncioDTO){
-
-		Anuncio anuncio = new Anuncio();
+	public Anuncio findById(Integer id) {
+		return anuncioRepository.findById(id).get();
+	}
 	
+	public Integer save(AnuncioDTO anuncioDTO){
+		Anuncio anuncio = new Anuncio();
+		Anuncio anuncioRetorno = new Anuncio();
+		Usuario usuario = new Usuario();
+		
 		if(anuncioDTO.getData_publicacao() != null){
 			Imovel imovel = new Imovel();
 			
 			imovel.setId_imovel(anuncioDTO.getImovelDTO().getId_imovel());
 			anuncio.setImovel(imovel);
+			usuario.setId_usuario(anuncioDTO.getUsuarioDTO().getId_usuario());
+			anuncio.setUsuario(usuario);
 			anuncio.setTipo_compartilhamento(anuncioDTO.getTipo_compartilhamento());
 			anuncio.setDetalhes_residencia(anuncioDTO.getDetalhes_residencia());
 			anuncio.setRegras_residencia(anuncioDTO.getRegras_residencia());
@@ -47,11 +55,12 @@ public class AnuncioService {
 			anuncio.setMapa_embed(anuncioDTO.getMapa_embed());
 			anuncio.setData_publicacao(anuncioDTO.getData_publicacao());
 			anuncio.setDetalhes_quarto(anuncioDTO.getDetalhes_quarto());
-			
+			anuncioRetorno = anuncioRepository.save(anuncio);
 			anuncioRepository.save(anuncio);
-			
 		}else {
 			System.out.println("Data vazia");
 		}
+		
+		return anuncioRetorno.getId_anuncio();
 	}
 }

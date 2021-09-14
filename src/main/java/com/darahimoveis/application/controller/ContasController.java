@@ -1,5 +1,6 @@
 package com.darahimoveis.application.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,11 +33,15 @@ public class ContasController {
 		return contas.get();
 	}
 	
+	@GetMapping("/findAll")
+	public List<Contas> findAll() {
+		List<Contas> contas = contasService.findAll();
+		return contas;
+	}
+	
 	@PostMapping
 	public ResponseEntity<String> salvarContas(@RequestBody ContasDTO contasDTO){
 		contasService.save(contasDTO);
 		return new ResponseEntity<String>("Contas Cadastrado!",HttpStatus.CREATED);
 	}
-	
-	
 }

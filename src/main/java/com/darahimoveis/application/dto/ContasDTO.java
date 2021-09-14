@@ -13,8 +13,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ContasDTO {
 
+	private Integer id_imovel;
 	private Integer id_contas;
-	private ImovelDTO imovelDTO;
+//	private ImovelDTO imovelDTO;
 	private Double aluguel;
 	private Double iptu;
 	private Double condominio;
@@ -24,20 +25,20 @@ public class ContasDTO {
 	private Double energia;
 	private Double gas;
 	
-public ContasDTO createContasDto(Contas contas) {
+public ContasDTO createContasDto(Contas conta) {
 		
 	ContasDTO contasDTO = new ContasDTO();
 		
-	contasDTO.setId_contas(contas.getId_contas());
-	contasDTO.setImovelDTO(new ImovelDTO().createImovelDto(contas.getImovel()));
-	contasDTO.setAluguel(contas.getAluguel());
-	contasDTO.setIptu(contas.getIptu());
-	contasDTO.setCondominio(contas.getCondominio());
-	contasDTO.setInternet(contas.getInternet());
-	contasDTO.setTv_cabo(contas.getTv_cabo());
-	contasDTO.setAgua(contas.getAgua());
-	contasDTO.setEnergia(contas.getEnergia());
-	contasDTO.setGas(contas.getGas());
+	contasDTO.setId_contas(conta.getId_conta());
+//	contasDTO.setImovelDTO(new ImovelDTO().createImovelDto(contas.getImovel()));
+	contasDTO.setAluguel(conta.getAluguel());
+	contasDTO.setIptu(conta.getIptu());
+	contasDTO.setCondominio(conta.getCondominio());
+	contasDTO.setInternet(conta.getInternet());
+	contasDTO.setTv_cabo(conta.getTv_cabo());
+	contasDTO.setAgua(conta.getAgua());
+	contasDTO.setEnergia(conta.getEnergia());
+	contasDTO.setGas(conta.getGas());
 		
 	return contasDTO;
 	}

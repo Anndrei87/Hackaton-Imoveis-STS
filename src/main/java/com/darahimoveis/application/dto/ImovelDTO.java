@@ -25,6 +25,9 @@ public class ImovelDTO {
 	private Integer qtd_banheiro;
 	private Double metragem_imovel;
 	private Integer qtd_num_pessoas;
+	private QuartoDTO quartoDTO;
+	private ContasDTO contasDTO;
+	private FotoDTO fotoDTO;
 	
 public ImovelDTO createImovelDto(Imovel imovel) {
 		
@@ -42,6 +45,9 @@ public ImovelDTO createImovelDto(Imovel imovel) {
 	imovelDTO.setQtd_banheiro(imovel.getQtd_banheiro());
 	imovelDTO.setMetragem_imovel(imovel.getMetragem_imovel());
 	imovelDTO.setQtd_num_pessoas(imovel.getQtd_num_pessoas());
+	imovelDTO.setQuartoDTO(new QuartoDTO().createQuartoDto(imovel.getQuarto()));
+	imovelDTO.setContasDTO(new ContasDTO().createContasDto(imovel.getConta()));
+//	imovelDTO.setFotoDTO(new FotoDTO().createFotoDto(imovel.getFotos()));
 	
 	return imovelDTO;
 	}

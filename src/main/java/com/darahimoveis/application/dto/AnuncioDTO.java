@@ -1,9 +1,6 @@
 package com.darahimoveis.application.dto;
 
-import java.util.List;
-
 import com.darahimoveis.application.model.Anuncio;
-import com.darahimoveis.application.model.Foto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,7 +15,6 @@ public class AnuncioDTO {
 
 	private Integer id_anuncio;
 	private ImovelDTO imovelDTO;
-	private List<Foto> fotos;
 	private UsuarioDTO usuarioDTO;
 	private String tipo_compartilhamento;
 	private String detalhes_residencia;
@@ -35,7 +31,6 @@ public AnuncioDTO createAnuncioDto(Anuncio anuncio) {
 	
 	anuncioDTO.setId_anuncio(anuncio.getId_anuncio());
 	anuncioDTO.setImovelDTO(new ImovelDTO().createImovelDto(anuncio.getImovel()));
-	anuncioDTO.setFotos(anuncio.getFotos());
 	anuncioDTO.setUsuarioDTO(new UsuarioDTO().createUsuarioDto(anuncio.getUsuario()));
 	anuncioDTO.setTipo_compartilhamento(anuncio.getTipo_compartilhamento());
 	anuncioDTO.setDetalhes_residencia(anuncio.getDetalhes_residencia());
